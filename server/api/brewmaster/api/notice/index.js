@@ -4,6 +4,7 @@ const base = require('../base');
 const models = require('../../models');
 const userModel = models.user;
 const noticeModel = models.notice;
+const sendEmail = require('drivers').email.sendEmailByTemplateAsync;
 
 const findAllEmailAddress = function* () {
   let emails = yield userModel.findAll({
@@ -60,6 +61,12 @@ Notice.prototype = {
       }
       yield noticeModel.create({title, content, link});
       res.status(201).end();
+
+      let emails = yield findAllEmailAddress();
+      emails = emails.map(e => e.email);
+      yield sendEmail(emails, title, {
+        content: `<h3>${title}</h3><p>${link}</p>`
+      });
     }).catch(next);
   },
   deleteNotice: function (req, res, next) {

@@ -119,6 +119,7 @@ View.prototype = {
         neutron_network_vlanranges: this.config('neutron_network_vlanranges'),
         enable_register: setting.enable_register,
         enable_register_approve: setting.enable_register_approve,
+        more_notice_link: setting.more_notice_link,
         telemerty: this.config('telemetry')
       },
       user: {

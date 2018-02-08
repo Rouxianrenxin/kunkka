@@ -106,6 +106,12 @@ module.exports = {
       value: 1,
       type: 'number',
       description: '账户锁定时间（分钟），默认值1'
+    }, {
+      app: 'global',
+      name: 'more_notice_link',
+      value: 'https://www.tfcloud.com/notice',
+      type: 'string',
+      description: '更多通知-链接'
     }
   ]
 };
