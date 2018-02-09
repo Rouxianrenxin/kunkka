@@ -1,0 +1,16 @@
+{
+  "title": ["create_notice"],
+  "fields": [{
+    "type": "input",
+    "field": "notice_title",
+    "required": true
+  }, {
+    "type": "input",
+    "field": "notice_link",
+    "required": true
+  }],
+  "btn": {
+    "value": "create",
+    "disabled": true
+  }
+}
