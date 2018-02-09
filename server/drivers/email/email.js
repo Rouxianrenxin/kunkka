@@ -71,7 +71,7 @@ driver.sendEmailByTemplateAsync = function (to, subject, data, templateName) {
     let corData = yield driver.getCorporationInfo();
     let content = ejs.render(templates[templateName || 'default'], Object.assign(corData, data));
     return yield transporter.sendEmailAsync({
-      to, subject: subject + '-' + corData.corporationName,
+      bcc: to, subject: subject + '-' + corData.corporationName,
       html: content, from: smtpConfig.auth.user
     });
   });
