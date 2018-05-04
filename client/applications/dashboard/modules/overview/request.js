@@ -27,5 +27,10 @@ module.exports = {
         originQuota: originalQuota
       }
     });
+  },
+  getNoticeList: function() {
+    return fetch.get({
+      url: '/api/notice/latest'
+    });
   }
 };

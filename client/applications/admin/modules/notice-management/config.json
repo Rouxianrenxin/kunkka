@@ -1,0 +1,45 @@
+{
+  "tabs": [{
+    "name": ["notice-management"],
+    "key": "notice-management",
+    "default": true
+  }],
+  "btns": [{
+    "value": ["create_notice"],
+    "key": "create",
+    "icon": "add-notice"
+  }, {
+    "value": ["delete"],
+    "key": "delete",
+    "icon": "empty",
+    "type": "delete",
+    "disabled": true
+  }, {
+    "key": "refresh",
+    "icon": "refresh"
+  }],
+  "table": {
+    "checkbox": true,
+    "dataKey": "id",
+    "loading": true,
+    "limit": 10,
+    "column": [{
+      "title": ["notice_title"],
+      "dataIndex": "title",
+      "key": "title"
+    }, {
+      "title": ["notice_link"],
+      "dataIndex": "link",
+      "key": "link"
+    }, {
+      "title": ["has_been_deleted"],
+      "key": "deleted"
+    }, {
+      "title": ["create", "time"],
+      "dataIndex": "createdAt",
+      "key": "created",
+      "type": "time"
+    }],
+    "data": []
+  }
+}

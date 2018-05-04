@@ -4,7 +4,8 @@
     "items": [
       "registration-approval",
       "approved-registration-application",
-      "quota-approval"
+      "quota-approval",
+      "notice-management"
     ]
   }, {
     "title": "compute_service",

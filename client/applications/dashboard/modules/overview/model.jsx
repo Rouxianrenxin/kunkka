@@ -2,6 +2,7 @@ require('./style/index.less');
 
 const React = require('react');
 const ResourceQuota = require('./quota');
+const NoticeContainer = require('./notice');
 const modifyQuota = require('./pop/modify_quota/index');
 const { Modal } = require('client/uskin/index');
 const request = require('./request');
@@ -15,8 +16,21 @@ class Model extends React.Component {
     this.state = {
       overview: {},
       types: [],
-      hideBtn: true
+      hideBtn: true,
+      noticeList: []
     };
+
+    let showNotice;
+    try {
+      showNotice = JSON.parse(HALO.settings.module_config).admin['notice-management'].show;
+    } catch(err) {
+      showNotice = true;
+    }
+
+    this.store = {
+      showNotice: showNotice
+    };
+
   }
 
   componentWillMount() {
@@ -27,6 +41,18 @@ class Model extends React.Component {
         hideBtn: false
       });
     });
+
+    if(this.store.showNotice) {
+      request.getNoticeList().then((res) => {
+        this.setState({
+          noticeList: res.notice
+        });
+      }).catch((err) => {
+        this.setState({
+          noticeList: []
+        });
+      });
+    }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -75,12 +101,12 @@ class Model extends React.Component {
   }
 
   render() {
-
     let overview = this.state.overview;
     let types = this.state.types;
 
     return (
       <div className="halo-module-overview" style={this.props.style}>
+        { (this.store.showNotice && this.state.noticeList.length >= 1) && <NoticeContainer list={this.state.noticeList} __={__} HALO={HALO} />}
         <div className="project-resources">
           <ResourceQuota overview={overview} types={types} hideBtn={this.state.hideBtn} onBtnClick={this.onBtnClick.bind(this)} />
         </div>

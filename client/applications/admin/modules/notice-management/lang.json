@@ -1,0 +1,22 @@
+{
+  "en": {
+    "confirm_delete_notice": "Are you sure you want to delete the following notice(s)?",
+    "create_notice": "Create Notice",
+    "delete_notice": "Delete notice",
+    "edit_notice": "Edit Notice",
+    "has_been_deleted": "Has been deleted",
+    "notice_id": "Notice ID",
+    "notice_link": "Notice Link",
+    "notice_title": "Notice Title"
+  },
+  "zh-CN": {
+    "confirm_delete_notice": "您确认要删除下列公告吗？",
+    "create_notice": "创建公告",
+    "delete_notice": "删除公告",
+    "edit_notice": "修改公告",
+    "has_been_deleted": "已被删除",
+    "notice_id": "公告ID",
+    "notice_link": "公告链接",
+    "notice_title": "公告标题"
+  }
+}

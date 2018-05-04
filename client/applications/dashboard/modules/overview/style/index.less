@@ -5,6 +5,7 @@
 @resource-quota-strip-default-color: @color_info;
 @resource-quota-strip-general-color: @color_warning;
 @resource-quota-strip-shortage-color: @color_delete;
+@link-color: #01afc9;
 
 .resource-box-title() {
   height: 48px;
@@ -35,6 +36,89 @@
   flex-direction: column;
   padding: 0 20px;
   overflow: auto;
+
+  .notice-container {
+    padding-top: 24px;
+    .new-notice {
+      margin-bottom: 10px;
+      border: 1px solid;
+      color: @link-color;
+      background: #eff9fa;
+      height: 48px;
+      border-radius: 2px;
+      .icon-status-warning {
+        width: 20px;
+        height: 20px;
+        padding: 14px 18px 14px 20px;
+        font-size: 20px;
+      }
+      span {
+        display: inline-block;
+        max-width: 450px;
+        font-size: 12px;
+        letter-spacing: 0;
+        line-height: 16px;
+        vertical-align: -5px;
+        .text-overflow();
+      }
+      a {
+        font-size: 14px;
+        color: @link-color;
+        letter-spacing: 0;
+        line-height: 20px;
+        float: right;
+        padding: 14px 30px 14px 0;
+      }
+      .icon-close {
+        cursor: pointer;
+        float: right;
+        font-size: 16px;
+        padding: 16px 20px 16px 0;
+      }
+    }
+
+    .notice-list-content-container {
+      border: 1px solid #f6f6f6;
+      border-radius: 2px;
+      > div {
+        background-color: @resource-box-color;
+        font-size: 14px;
+        span {
+          padding-left: 20px;
+          color: #000;
+          letter-spacing: 0;
+          line-height: 44px;
+        }
+        a {
+          float: right;
+          padding: 12px 20px 12px 0;
+          color: @link-color;
+        }
+      }
+      ul {
+        padding: 18px 20px;
+        font-size: 12px;
+        letter-spacing: 0;
+        li {
+          line-height: 16px;
+          &:not(:last-child) {
+            margin-bottom: 12px;
+          }
+        }
+        a {
+          display: inline-block;
+          max-width: 450px;
+          vertical-align: -4px;
+          color: @link-color;
+          .text-overflow();
+        }
+        span {
+          float: right;
+          color: #000;
+        }
+      }
+    }
+  }
 
   .project-resources {
     flex: 1;
