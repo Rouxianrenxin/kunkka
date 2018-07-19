@@ -1,0 +1,16 @@
+{
+  "title": ["release", "floating_ip"],
+  "fields": [{
+    "type": "icon_label",
+    "field": "floating_ip",
+    "icon_type": "floating_ip"
+  }, {
+    "type": "tip",
+    "tip_type": "info",
+    "field": "release_floating_ip_tip_info"
+  }],
+  "btn": {
+    "value": "release",
+    "disabled": false
+  }
+}
