@@ -1,8 +1,7 @@
 {
   "tabs": [{
     "name": ["action_log_instance"],
-    "key": "action-log",
-    "default": true
+    "key": "action-log"
   }, {
     "name": ["action_log_port"],
     "key": "action-log-port"
@@ -17,7 +16,8 @@
     "key": "action-log-network"
   }, {
     "name": ["action_log_subnet"],
-    "key": "action-log-subnet"
+    "key": "action-log-subnet",
+    "default": true
   }],
   "btns": [{
     "key": "refresh",
