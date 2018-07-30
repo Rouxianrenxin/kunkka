@@ -1,14 +1,14 @@
 {
   "tabs": [{
     "name": ["action_log_instance"],
-    "key": "action-log",
-    "default": true
+    "key": "action-log"
   }, {
     "name": ["action_log_port"],
     "key": "action-log-port"
   }, {
     "name": ["action_log_volume"],
-    "key": "action-log-volume"
+    "key": "action-log-volume",
+    "default": true
   }, {
     "name": ["action_log_router"],
     "key": "action-log-router"

@@ -1,24 +1,18 @@
 {
   "en": {
-    "action_fail": "Fail",
-    "action_login": "Login",
-    "action_logout": "Logout",
-    "action_success": "Success",
-    "type_of_operation": "Type of operation",
-    "operation_result": "Operation result",
-    "operator": "Operator",
-    "ip_address": "IP address",
-    "operating_time": "Operating time"
+    "action_log_instance": "Instance Action Log",
+    "action_log_network": "Netork Action Log",
+    "action_log_port": "Port Action Log",
+    "action_log_router": "Router Action Log",
+    "action_log_subnet": "Subnet Action Log",
+    "action_log_volume": "Volume Action Log"
   },
   "zh-CN": {
-    "action_fail": "失败",
-    "action_login": "登录",
-    "action_logout": "退出",
-    "action_success": "成功",
-    "type_of_operation": "操作类型",
-    "operation_result": "操作结果",
-    "operator": "操作账号",
-    "ip_address": "IP 地址",
-    "operating_time": "操作时间"
+    "action_log_instance": "云主机",
+    "action_log_network": "网络",
+    "action_log_port": "网络端口",
+    "action_log_router": "路由器",
+    "action_log_subnet": "子网",
+    "action_log_volume": "云硬盘"
   }
 }
