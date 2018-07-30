@@ -214,6 +214,11 @@ module.exports = {
       data: data
     });
   },
+  releaseFloatingIp: function(id) {
+    return fetch.delete({
+      url: '/proxy/neutron/v2.0/floatingips/' + id
+    });
+  },
   getExternalNetwork: function(projectId) {
     return fetch.get({
       url: '/proxy/neutron/v2.0/networks?router:external=true'

@@ -6,6 +6,7 @@ const BasicProps = require('client/components/basic_props/index');
 
 const allocateModal = require('./pop/allocation_floating_ip/index');
 const dissociateModal = require('./pop/dissociate_floating_ip/index');
+const releaseModal = require('./pop/release_floating_ip/index');
 
 const request = require('./request');
 const config = require('./config.json');
@@ -453,6 +454,16 @@ class Model extends React.Component {
           });
         });
         break;
+      case 'release':
+        releaseModal(rows[0], () => {
+          this.refresh({
+            refreshList: true,
+            refreshDetail: true,
+            loadingTable: true,
+            loadingDetail: true
+          });
+        });
+        break;
       case 'export_csv':
         request.getFieldsList().then((res) => {
           csv(res);
@@ -484,6 +495,9 @@ class Model extends React.Component {
   btnListRender(rows, btns) {
     for(let key in btns) {
       switch(key) {
+        case 'release':
+          btns[key].disabled = rows.length === 1 ? false : true;
+          break;
         case 'dissociate':
           btns[key].disabled = (rows.length === 1 && rows[0].router_id && rows[0].port_id) ? false : true;
           break;
