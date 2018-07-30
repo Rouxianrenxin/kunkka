@@ -461,7 +461,7 @@ class Model extends React.Component {
           btns[key].disabled = (len > 0 && !rows.some(item => item.status === 'error')) ? false : true;
           break;
         case 'delete':
-          btns[key].disabled = (len > 0 && rows[0].status === 'available') ? false : true;
+          btns[key].disabled = (len > 0 && (rows[0].status === 'available' || rows[0].status === 'error')) ? false : true;
           break;
         default:
           break;
